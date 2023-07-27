@@ -19,18 +19,26 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        created_date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
         user_id: {
             type: DataTypes.STRING,
             references: {
                 model: 'user',
                 key: 'id',
             },
-        },
-        created_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        }
+        }, 
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'blog',
     }
-)
+);
 
 module.exports = Blog;

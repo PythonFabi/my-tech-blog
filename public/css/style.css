@@ -1,0 +1,46 @@
+:root{
+    --main-bg-color: rgb(31, 20, 20);
+    --skyblue: rgb(208, 241, 247);
+    --lightgrey:  rgb(168, 182, 185);
+}
+
+
+.tech {
+    font-weight: bold;
+    border: 2px solid var(--skyblue);
+    border-radius: 8%;
+    padding: 0.5rem;
+    color: var(--main-bg-color);
+    background-color: var(--skyblue);
+    box-shadow: 5px 5px var(--lightgrey)
+}
+
+.link {
+    color: var(--skyblue);
+}
+
+.nav-link:hover {
+    color: aqua;
+}
+
+body {
+    background-color: var(--skyblue);
+}
+
+.header {
+    background-color: var(--main-bg-color);
+}
+
+.card {
+    margin: 2rem;
+    background-color: var(--skyblue);
+    border: 2px solid var(--main-bg-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    background-color: var(--main-bg-color);
+    color: var(--lightgrey)
+}

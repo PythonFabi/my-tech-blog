@@ -1,6 +1,6 @@
 :root{
     --main-bg-color: rgb(31, 20, 20);
-    --skyblue: rgb(208, 241, 247);
+    --brightgreen: rgb(153, 242, 141);
     --lightgrey:  rgb(168, 182, 185);
 }
 
@@ -16,7 +16,7 @@
 }
 
 .link {
-    color: var(--skyblue);
+    color: var(--brightgreen);
 }
 
 .nav-link:hover {
@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color: var(--skyblue);
+    background-color: var(--brightgreen);
 }
 
 .header {
@@ -33,7 +33,7 @@ body {
 
 .card {
     margin: 2rem;
-    background-color: var(--skyblue);
+    background-color: var(--brightgreen);
     border: 2px solid var(--main-bg-color);
 }
 

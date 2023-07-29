@@ -1,15 +1,15 @@
 {{#if blogs.length}}
-  <h3> Current Projects: </h3>
-  {{#each blogs as |blog|}}
-    <div>
-        <div>
-            <h2>
-                <a href="/blog/{{blog.id}}">{{blog.title}}</a>
-            </h2>
-            <p>{{format_date blog.created_date}}</p>
+{{#each blogs as |blog|}}
+<div class="card">
+
+    <a href="/blog/{{blog.id}}">
+        <div class="card-header">{{blog.name}}<p>{{format_date blog.date_created}}</p>
         </div>
-    </div>
+    </a>
 
-    {{/each}}
+</div>
+{{/each}}
 {{/if}}
-
+<div class="position-fixed bottom-0 p-3">
+    <button class="btn btn-primary" id="create">+ New Post</button>
+</div>

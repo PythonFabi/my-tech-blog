@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exhbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // set up the Handlebars.js engine with custom helpers --> e.g.: format_date
-const hbs = exhbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
@@ -37,7 +37,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/boostrap/dist')));
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 
 app.use(routes);
 

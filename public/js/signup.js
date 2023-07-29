@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Error creating user.');
             }
 
-            window.location.replace('/login');
+            window.location.replace('/');
         } catch (err) {
             console.error(err);
         }

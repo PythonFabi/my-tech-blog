@@ -57,28 +57,62 @@ router.get('/blogs/:id', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
-        const blogData = await Blog.findAll({
-            where: {
-                user_id: req.session.user_id,
-            }, 
+        const userData = await User.findByPk(req.session.user_id, {
             include: [
                 {
-                    model: User,
-                    attributes: ['name'],
+                    model: Blog,
+                    include: {
+                        model: User,
+                        as: 'user',
+                        attributes: ['name'],
+                    }
                 }
-            ]
+            ],
         });
 
-        const blogs = blogData.map((project) => project.get({ plain: true }));
+        const users = userData.get({ plain: true });
 
-        res.render('dashboard', {
-            blogs,
-            logged_in: true,
+        res.render('dashboard' {
+            ...users,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+
+router.get('/editBlog/:id', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+                {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            as: 'user',
+                            attributes: ['name'],
+                        },
+                    ],
+                },
+            ],
+        });
+
+        const blog = blogData.get({ plain: true });
+        res.render('editBlog', {
+            ...blog,
+            logged_in: req.session.logged_in,
+            blod_id: blog.id,
+        });
+    } catch (err) {
+        res.json(err)
+    }
+})
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

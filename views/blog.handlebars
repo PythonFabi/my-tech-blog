@@ -1,21 +1,46 @@
-<div>
-    <h2>{{title}}</h2>
-    <p>{{contents}}</p>
-    <p>Created by {{user.name}} on {{format_date created_date}}</p>
-    <textarea id="comment-text" placeholder="Write your comment here"></textarea>
-    <button id="submit-comment-btn">Create Comment</button>
+<div class="card">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <div class="container container-fluid mt-5">
+            <div class="row justify-content-center">
+
+                <h2 id="blogname">{{title}}</h2>
+                <p id="description">{{description}}</p>
+                <p>Created by <span id="username">{{user.name}}</span>on <span id="date">{{format_date
+                        date_created}}</span>
+                </p>
+
+                <div class="border-primary rounded lightBlue d-flex">
+
+                    <textarea class="form-control" id="comment" placeholder="Write a comment"></textarea>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 {{#if comments.length}}
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
 
-  <h3>Comments:</h3>
+        <h3 id="blogname">Comments:</h3>
+        {{#each comments as |comment|}}
 
-{{#each comments as |comment|}}
-<div>
-    <p>{{user.name}}: {{comment.contents}}</p>
+        <div class="col-10">
+            <p> <span> <strong>{{user.name}}:</strong> </span>{{comment.description}}</p>
+        </div>
+        <div class="col">
+            <p>{{format_date comment.date_created}}</p>
+        </div>
+
+        {{/each}}
+    </div>
 </div>
-<div>
-    <P>{{format_date comment.date_created}}</P>
-</div>
-
+{{/if}}
 <script src="/js/blog.js"></script>

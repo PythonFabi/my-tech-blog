@@ -21,7 +21,7 @@ Comment.init(
             defaultValue: DataTypes.NOW,
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
@@ -40,8 +40,8 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'comment',
     }
 );
 
-module.exports = Blog;
+module.exports = Comment;

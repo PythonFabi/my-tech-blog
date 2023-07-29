@@ -23,7 +23,7 @@ const sess = {
         sameSite: 'strict',
     },
     resave: false,
-    saveUnitialized: true,
+    saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize
     })
@@ -37,8 +37,14 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/boostrap/dist')));
 
 app.use(routes);
+
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+})
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));

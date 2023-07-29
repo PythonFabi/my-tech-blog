@@ -32,6 +32,15 @@ router.get('/blogs/:id', async (req, res) => {
                     model: User,
                     attributes: ['name']
                 },
+                {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['name']
+                        }
+                    ]
+                }
             ],
         });
 
@@ -48,10 +57,28 @@ router.get('/blogs/:id', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
-        const blogData = 
+        const blogData = await Blog.findAll({
+            where: {
+                user_id: req.session.user_id,
+            }, 
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                }
+            ]
+        });
 
+        const blogs = blogData.map((project) => project.get({ plain: true }));
+
+        res.render('dashboard', {
+            blogs,
+            logged_in: true,
+        });
+    } catch (err) {
+        res.status(500).json(err);
     }
-})
+});
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

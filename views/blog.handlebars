@@ -1,0 +1,21 @@
+<div>
+    <h2>{{title}}</h2>
+    <p>{{contents}}</p>
+    <p>Created by {{user.name}} on {{format_date created_date}}</p>
+    <textarea id="comment-text" placeholder="Write your comment here"></textarea>
+    <button id="submit-comment-btn">Create Comment</button>
+</div>
+
+{{#if comments.length}}
+
+  <h3>Comments:</h3>
+
+{{#each comments as |comment|}}
+<div>
+    <p>{{user.name}}: {{comment.contents}}</p>
+</div>
+<div>
+    <P>{{format_date comment.date_created}}</P>
+</div>
+
+<script src="/js/blog.js"></script>

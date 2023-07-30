@@ -1,7 +1,8 @@
 const editBlog = async (event) => {
     if(event.target.getAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
-        const name = document.querySelector('#editTitle').value.trim();
+        const title = document.querySelector('#editTitle').value.trim();
+        const contents = document.querySelector('#editContent').value.trim();
 
         const response = await fetch(`/api/blogs/${id}`, {
             method: 'PUT',

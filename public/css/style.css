@@ -58,3 +58,14 @@ body {
 .authlink {
     text-decoration: none;
 }
+
+.createbtn {
+    background-color: var(--lightgrey);
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.comment-form {
+    width: 100%;
+}
+

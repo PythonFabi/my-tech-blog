@@ -13,9 +13,10 @@ const seedData = async () => {
     });
 
     for (const blog of blogData) {
+        const randomUser = allUsers[Math.floor(Math.random() * allUsers.length)];
         await Blog.create({
             ...blog,
-            user_id: allUsers[Math.floor(Math.random() * allUsers.length)].isSoftDeleted,
+            user_id: randomUser.id,
         });
     }
 

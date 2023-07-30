@@ -72,7 +72,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const users = userData.get({ plain: true });
 
-        res.render('dashboard' {
+        res.render('dashboard', {
             ...users,
             logged_in: req.session.logged_in
         });

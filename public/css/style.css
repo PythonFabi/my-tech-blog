@@ -1,18 +1,18 @@
 :root{
-    --main-bg-color: rgb(31, 20, 20);
-    --brightgreen: rgb(153, 242, 141);
+    --main-bg-color: rgb(41, 30, 30);
+    --brightgreen: rgb(190, 245, 183);
     --lightgrey:  rgb(168, 182, 185);
 }
 
 
 .tech {
     font-weight: bold;
-    border: 2px solid var(--skyblue);
+    border: 2px solid var(--brightgreen);
     border-radius: 8%;
     padding: 0.5rem;
     color: var(--main-bg-color);
-    background-color: var(--skyblue);
-    box-shadow: 5px 5px var(--lightgrey)
+    background-color: var(--brightgreen);
+    box-shadow: 5px 5px var(--lightgrey);
 }
 
 .link {

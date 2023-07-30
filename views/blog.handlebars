@@ -3,20 +3,20 @@
         {{title}}
     </div>
     <div class="card-body">
-            <div class="row justify-content-center">
-                <h2 id="blogtitle">{{title}}</h2>
-                <p id="contents">{{contents}}</p>
-                <p>Created by <b>{{user.username}}</b> on <em>{{format_date created_date}}</em>
-                </p>
+        <div class="row justify-content-center">
+            <h2 id="blogtitle">{{title}}</h2>
+            <p id="contents">{{contents}}</p>
+            <p>Created by <b>{{user.username}}</b> on <em>{{format_date created_date}}</em>
+            </p>
 
-                <div class="border-primary rounded lightBlue d-flex">
+            <div class="border-primary rounded lightBlue d-flex">
 
-                    <div class="comment-form">
-                        <textarea class="form-control" id="comment" placeholder="Write a comment"></textarea>
-                        <button class="btn createbtn" id="submitbtn" data-id="{{id}}">Submit</button>
-                    </div>
+                <div class="comment-form">
+                    <textarea class="form-control" id="comment" placeholder="Write a comment"></textarea>
+                    <button class="btn createbtn" id="submitbtn" data-id="{{id}}">Submit</button>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 </div>

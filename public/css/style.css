@@ -69,8 +69,13 @@ body {
     width: 100%;
 }
 
-.edit-delete {
+.create-edit-delete {
     background-color: var(--lightgrey);
     margin: 0.5rem 0;
     width: 100%;
+}
+
+.newPostBtn {
+    background-color: var(--main-bg-color);
+    color: white;
 }

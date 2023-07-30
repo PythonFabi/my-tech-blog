@@ -1,26 +1,26 @@
 [
     {
-        "name": "Fabi",
+        "username": "Fabi",
         "password": "horse123"
     },
     {
-        "name": "Jack",
+        "username": "Jack",
         "password": "sparrow123"
     },
     {
-        "name": "Tony",
+        "username": "Tony",
         "password": "ironman123"
     },
     {
-        "name": "Jane",
+        "username": "Jane",
         "password": "austin123"
     },
     {
-        "name": "Brad",
+        "username": "Brad",
         "password": "pitt123"
     },
     {
-        "name": "Daniel",
+        "username": "Daniel",
         "password": "craig123"
     }
 ]

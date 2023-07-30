@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
@@ -30,14 +30,14 @@ router.get('/blogs/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['username']
                 },
                 {
                     model: Comment,
                     include: [
                         {
                             model: User,
-                            attributes: ['name']
+                            attributes: ['username']
                         }
                     ]
                 }
@@ -64,7 +64,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
                     include: {
                         model: User,
                         as: 'user',
-                        attributes: ['name'],
+                        attributes: ['username'],
                     }
                 }
             ],
@@ -97,7 +97,7 @@ router.get('/editBlog/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
                 {
                     model: Comment,
@@ -105,7 +105,7 @@ router.get('/editBlog/:id', withAuth, async (req, res) => {
                         {
                             model: User,
                             as: 'user',
-                            attributes: ['name'],
+                            attributes: ['username'],
                         },
                     ],
                 },
@@ -125,12 +125,21 @@ router.get('/editBlog/:id', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage');
+        res.redirect('/dashboard');
         return;
     }
 
     res.render('login');
 });
+
+
+router.get('/logout', (req, res) => {
+    console.log(req.session);
+    if (req.session.logged_in) {
+        req.session.destroy();
+    }
+     res.redirect('/');
+})
 
 router.get('/signup', (req, res) => {
     res.render('signup');

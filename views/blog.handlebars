@@ -8,7 +8,7 @@
 
                 <h2 id="blogname">{{title}}</h2>
                 <p id="description">{{description}}</p>
-                <p>Created by <span id="username">{{user.name}}</span>on <span id="date">{{format_date
+                <p>Created by <span id="username">{{user.username}}</span>on <span id="date">{{format_date
                         date_created}}</span>
                 </p>
 
@@ -33,7 +33,7 @@
         {{#each comments as |comment|}}
 
         <div class="col-10">
-            <p> <span> <strong>{{user.name}}:</strong> </span>{{comment.description}}</p>
+            <p> <span> <strong>{{user.username}}:</strong> </span>{{comment.description}}</p>
         </div>
         <div class="col">
             <p>{{format_date comment.date_created}}</p>

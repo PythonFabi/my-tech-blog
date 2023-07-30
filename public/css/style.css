@@ -48,3 +48,13 @@ body {
 .blogs {
     text-decoration: none;
 }
+
+.authbtn {
+    background-color: var(--lightgrey);
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.authlink {
+    text-decoration: none;
+}

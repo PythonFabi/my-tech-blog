@@ -44,3 +44,7 @@ body {
     background-color: var(--main-bg-color);
     color: var(--lightgrey)
 }
+
+.blogs {
+    text-decoration: none;
+}

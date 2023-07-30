@@ -81,7 +81,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('newBlog', withAuth, async (req, res) => {
+router.get('/newBlog', withAuth, async (req, res) => {
     try {
         res.render('newBlog', {
             logged_in: req.session.logged_in

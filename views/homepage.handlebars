@@ -1,5 +1,5 @@
 {{#each blogs as |blog|}}
-   <div class="card">
+  <a href="/blogs/{{blog.id}}" class="blogs"><div class="card">
             <div class="card-header">
               <h4>{{blog.title}}</h4>
               <p>Posted by {{blog.user.username}} on {{format_date blog.created_date}}</p>
@@ -7,5 +7,5 @@
             <div class="card-body">
               <p class="card-text">{{blog.contents}}</p>
             </div>
-          </div>
+          </div></a>
 {{/each}}

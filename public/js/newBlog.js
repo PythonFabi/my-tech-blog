@@ -4,8 +4,8 @@ const newPost = async (event) => {
     const contents = document.querySelector('#newContent').value.trim();
     const title = document.querySelector('#newTitle').value.trim();
 
-    if(contents && title) {
-        const response = await fetch('/api/blog', {
+    if(title && contents) {
+        const response = await fetch('/api/blogs', {
             method: 'POST',
             body: JSON.stringify({ title, contents }),
             headers: {
@@ -19,3 +19,5 @@ const newPost = async (event) => {
         }
     }
 };
+
+document.querySelector('#createBtn').addEventListener('click', newPost);

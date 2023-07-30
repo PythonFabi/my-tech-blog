@@ -3,7 +3,7 @@ const editBlog = async (event) => {
         const id = event.target.getAttribute('data-id');
         const name = document.querySelector('#editTitle').value.trim();
 
-        const response = await fetch(`/api/blog/${id}`, {
+        const response = await fetch(`/api/blogs/${id}`, {
             method: 'PUT',
             body: JSON.stringify({title, contents}),
             headers: {
@@ -22,7 +22,7 @@ const deletePost = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/blog/${id}`, {
+        const response = await fetch(`/api/blogs/${id}`, {
             method: 'DELETE',
         });
 

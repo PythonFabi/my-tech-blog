@@ -13,7 +13,7 @@ const createNewComment = async (event) => {
             },
         });
         if(response.ok) {
-            window.location.replace(`/blog/${blog_id}`);
+            window.location.replace(`/blogs/${blog_id}`);
         } else {
             alert(response.statusText);
         }

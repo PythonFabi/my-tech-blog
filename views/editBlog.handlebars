@@ -7,12 +7,15 @@
 
 
       <label for="newTitle">Title:</label>
+      {{!-- edit title based on id --}}
       <textarea class="form-control" id="editTitle" data-id="{{id}}"></textarea>
 
 
       <label for="newContent">Content:</label>
+      {{!-- edit content based on id --}}
       <textarea class="form-control" id="editContent" data-id="{{id}}"></textarea>
 
+{{!-- update and delete post based on id --}}
       <button class="btn create-edit-delete" id="editBtn" data-id="{{id}}">Update Post</button><br />
       <button class="btn create-edit-delete" id="deletebtn" data-id="{{id}}">Delete </button>
 

@@ -2,6 +2,7 @@ const User = require('./User');
 const Blog = require('./BlogPost');
 const Comment = require('./Comment');
 
+// create relations between the models
 User.hasMany(Blog, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'

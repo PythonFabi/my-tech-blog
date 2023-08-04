@@ -40,8 +40,10 @@ router.put('/:id', withAuth, async (req, res) => {
         }
 });
 
+// delete blog based id, just when authenticated
 router.delete('/:id', withAuth, async (req, res) => {
     try {
+        // find blog based on id and current user id and delete
         const deletedBlog = await Blog.destroy({
             where: {
                 id: req.params.id,
@@ -49,11 +51,13 @@ router.delete('/:id', withAuth, async (req, res) => {
             },
         });
 
+        // give error, if not your blog
         if(!deletedBlog) {
             res.status(403).json({ message: "You don't have permission to delete this blog post." });
             return;
         }
 
+        // success status
         res.status(200).json({ message: 'Blog post deleted successfully.' });
     } catch (err) {
         res.status(500).json(err);

@@ -8,7 +8,7 @@ I learned how to use the Model-View-Controller (MVC) to create a dynamic applica
 manner. 
 Happy blogging!
 
-![My Tech Blog](https://glacial-fortress-55574-019570e3c30e.herokuapp.com/)
+[My Tech Blog](https://glacial-fortress-55574-019570e3c30e.herokuapp.com/)
 
 ## Installation
 

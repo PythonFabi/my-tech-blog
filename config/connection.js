@@ -1,8 +1,10 @@
+// import sequelize and use dotenv for the configuration
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
 
+// use jawsdb as database if jawsdb_url
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
